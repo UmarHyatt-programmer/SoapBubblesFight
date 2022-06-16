@@ -42,10 +42,10 @@ public class PlayerMovement : MonoBehaviour
         if(IsWalking)
         {
             MovePos   = Self.position + (new Vector3(InputX * StrafeSpeed, 0, ForwardSpeed * Time.deltaTime) * Time.deltaTime);
-            //MovePos.x = Mathf.Clamp(MovePos.x, -ClampX, ClampX);
+            MovePos.x = Mathf.Clamp(MovePos.x, -ClampX, ClampX);
             rot = Quaternion.AngleAxis(InputX * StrafeSpeed,Vector3.up);
             RB.MovePosition(MovePos);
-            //PlayerRotation();
+            PlayerRotation();
         }//if end
         else
             MovePos = Vector3.zero;

@@ -4,9 +4,9 @@ public class PlayerMovement : MonoBehaviour
     public static PlayerMovement instance;
     private void Awake()
     {
-        if(instance==null)
+        if (instance == null)
         {
-            instance=this;
+            instance = this;
         }
     }
     [SerializeField] bool IsWalking = false;
@@ -16,7 +16,7 @@ public class PlayerMovement : MonoBehaviour
 
     private InputControls Inputs = null;
     private Transform Self = null;
-    private Animator Anim = null;
+    public Animator PlayerAnim;
     private Rigidbody RB = null;
     private Collider Col = null;
     private float InputX = 0.0f;
@@ -46,11 +46,13 @@ public class PlayerMovement : MonoBehaviour
     {
         if (IsWalking)
         {
+            PlayerAnim.SetBool("isRunning", true);
             MovePos = Self.position + (new Vector3(InputX * StrafeSpeed, 0, ForwardSpeed * Time.deltaTime) * Time.deltaTime);
             MovePos.x = Mathf.Clamp(MovePos.x, -ClampX, ClampX);
             rot = Quaternion.AngleAxis(InputX * StrafeSpeed, Vector3.up);
             RB.MovePosition(MovePos);
             PlayerRotation();
+
         }//if end
         else
             MovePos = Vector3.zero;
@@ -59,10 +61,10 @@ public class PlayerMovement : MonoBehaviour
     private float currentRotation;
     void PlayerRotation()
     {
-        currentRotation = Mathf.Atan2(InputX * StrafeSpeed, 1) * Mathf.Rad2Deg;
+        currentRotation = Mathf.Atan(InputX / 1) * Mathf.Rad2Deg;
         currentRotation = Mathf.Clamp(currentRotation, -30, 30);
         var rotation = Quaternion.Euler(Vector3.up * currentRotation);
-        Debug.LogError(rotation);
+        //        Debug.LogError(rotation);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 2.5f);
     }
 

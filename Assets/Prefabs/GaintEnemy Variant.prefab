@@ -13,7 +13,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: a58b7830aaf2db84b995c0f933d5593d, type: 2}
     - target: {fileID: 7441667713474277601, guid: 99dc296ddf6c2b84087b125ff6e53518, type: 3}
       propertyPath: dicreamentSize
-      value: 0.4
+      value: 0.6
       objectReference: {fileID: 0}
     - target: {fileID: 7441667713474277606, guid: 99dc296ddf6c2b84087b125ff6e53518, type: 3}
       propertyPath: m_Name

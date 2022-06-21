@@ -32,7 +32,9 @@ public class FollowPlayer : MonoBehaviour
         }
         else
         {
+            UIManager.instance.gameOverPanel.SetActive(true);
             Debug.Log("You lose");
+            Time.timeScale=0;
         }
 
     }

@@ -57,7 +57,14 @@ public class PlayerMovement : MonoBehaviour
         else
             MovePos = Vector3.zero;
     }//FixedUpdate() end
-
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag=="Finish")
+        {
+            UIManager.instance.gameWinPanel.SetActive(true);
+            Time.timeScale=0;
+        }
+    }
     private float currentRotation;
     void PlayerRotation()
     {

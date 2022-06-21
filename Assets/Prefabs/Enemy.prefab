@@ -211,7 +211,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cff0bdeb73f594343aa6eda8c32900c2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  dicreamentSize: 0.08
+  dicreamentSize: 0.2
   speed: 3
   upwardSpeed: 5
   bubble: {fileID: 6397848740704325967}

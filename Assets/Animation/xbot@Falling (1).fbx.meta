@@ -6,6 +6,9 @@ ModelImporter:
   - first:
       74: -203655887218126122
     second: Falling (1)
+  - first:
+      74: -1500354584072067147
+    second: Falling
   externalObjects: {}
   materials:
     materialImportMode: 2

@@ -26,6 +26,9 @@ public class FollowPlayer : MonoBehaviour
     }
     public void SizeDecrement(float decrement)
     {
+        if (UIManager.instance.gameState != GameState.GamePlay)
+            return;
+
         if (transform.localScale.z > minBubbleSize)
         {
             transform.localScale -= new Vector3(decrement, decrement, decrement);
@@ -34,7 +37,8 @@ public class FollowPlayer : MonoBehaviour
         {
             UIManager.instance.gameOverPanel.SetActive(true);
             Debug.Log("You lose");
-            Time.timeScale=0;
+            UIManager.instance.gameState = GameState.LevelFail;
+            //Time.timeScale=0;
         }
 
     }

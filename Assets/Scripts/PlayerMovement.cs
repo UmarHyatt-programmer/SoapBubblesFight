@@ -36,6 +36,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void Update()
     {
+        if (UIManager.instance.gameState != GameState.GamePlay)
+            return;
+
         if (IsWalking == false)
             IsWalking = Inputs.TouchDown;
         // Anim.SetBool("Walk", IsWalking);
@@ -44,6 +47,9 @@ public class PlayerMovement : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (UIManager.instance.gameState != GameState.GamePlay)
+            return;
+
         if (IsWalking)
         {
             PlayerAnim.SetBool("isRunning", true);
@@ -62,7 +68,8 @@ public class PlayerMovement : MonoBehaviour
         if(other.tag=="Finish")
         {
             UIManager.instance.gameWinPanel.SetActive(true);
-            Time.timeScale=0;
+            UIManager.instance.gameState = GameState.LevelComplete;
+
         }
     }
     private float currentRotation;

@@ -12,9 +12,9 @@ public class CameraController : MonoBehaviour
     {
         offSet = transform.position - target.transform.position;
     }
-    private void Update()
+    private void LateUpdate()
     {
-        transform.position = Vector3.Slerp(transform.position, new Vector3(target.position.x * camlerpx, transform.position.y, target.position.z+offSet.z), speedT);
+        transform.position = Vector3.Lerp(transform.position, new Vector3(target.position.x * camlerpx, transform.position.y, target.position.z+offSet.z), speedT);
       
       //  transform.position = Vector3.Lerp(transform.position, target.position + offSet, speedT * Time.deltaTime);
     }

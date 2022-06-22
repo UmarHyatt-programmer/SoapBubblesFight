@@ -23,6 +23,10 @@ public class EnemyController : MonoBehaviour
     }
     private void Update()
     {
+
+        if (UIManager.instance.gameState != GameState.GamePlay)
+            return;
+
         if (Vector3.Distance(PlayerMovement.instance.transform.position, transform.position) < chaseRange)
         {
             if (target != null & isRunning == true)
@@ -52,6 +56,8 @@ public class EnemyController : MonoBehaviour
             rb.useGravity = false;
             transform.position += new Vector3(0, upwardSpeed * Time.deltaTime, 0);
             GetComponent<Animator>().SetBool("isFalling", true);
+
+            Destroy(gameObject, 3);
         }
     }
     private void OnTriggerEnter(Collider other)

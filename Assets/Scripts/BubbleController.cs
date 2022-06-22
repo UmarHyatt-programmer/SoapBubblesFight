@@ -11,8 +11,12 @@ public class BubbleController : MonoBehaviour
     public float maxSize;
     public bool a = false,b = false;
     void Update()
-    {   //changing player bubble size
-        if(bubble.localScale.x<maxSize)
+    {
+        if (UIManager.instance.gameState != GameState.GamePlay)
+            return;
+
+        //changing player bubble size
+        if (bubble.localScale.x<maxSize)
         {
         bubble.localScale += Vector3.one*changeSize * Time.deltaTime;
         }

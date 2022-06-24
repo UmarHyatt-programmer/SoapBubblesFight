@@ -2,7 +2,6 @@ using UnityEngine;
 
 public class InputControls : MonoBehaviour
 {
-    
     [SerializeField] bool FingerDown  = false;
     [SerializeField] float MoveDeltaX = 0.0f;
     private float LastPosX = 0.0f;

@@ -67,7 +67,7 @@ public class EnemyController : MonoBehaviour
             if (isFirstCollision == true)
             {
                 isFirstCollision = false;
-                FollowPlayer.instance.SizeDecrement(dicreamentSize);
+                BubbleController.instance.SizeDecrement(dicreamentSize);
                 isRunning = false;
                 isCollided = true;
                 // target = null;

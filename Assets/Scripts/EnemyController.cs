@@ -39,7 +39,7 @@ public class EnemyController : MonoBehaviour
                 transform.LookAt(target.position);
                 //rb.MovePosition(target.position);
             }
-
+            
             if (transform.position.z < target.position.z - 200)
             {
                 Debug.Log(gameObject.name + " Destroyed");

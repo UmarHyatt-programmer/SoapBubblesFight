@@ -49,13 +49,21 @@ public class PlayerMovement : MonoBehaviour
         
         InputX = Inputs.Horizontal * StrafeSpeed;
         InputX = Mathf.Clamp(InputX,-strafeSpeedClamp,strafeSpeedClamp);
-        print(InputX);
     }
 
     private void FixedUpdate()
     {
         if (UIManager.instance.gameState != GameState.GamePlay)
             return;
+        if(Input.GetMouseButton(0))
+        {
+            IsWalking = true;
+        }
+        else
+        {
+            IsWalking = false;
+            PlayerAnim.SetBool("isRunning",false);
+        }
 
         if (IsWalking)
         {

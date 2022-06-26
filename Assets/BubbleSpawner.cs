@@ -21,6 +21,9 @@ public class BubbleSpawner : MonoBehaviour
     }
     public void Update()
     {
+         if (UIManager.instance.gameState != GameState.GamePlay)
+            return;
+            
         if(Input.GetMouseButton(0))
         {
 

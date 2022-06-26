@@ -21,7 +21,7 @@ public class EnemyController : MonoBehaviour
     private void Start()
     {
         target = PlayerMovement.instance.transform;
-        Function();
+       
     }
     private void Update()
     {
@@ -62,16 +62,6 @@ public class EnemyController : MonoBehaviour
 
             Destroy(gameObject, 3);
         }
-    }
-    int FFF = 5;
-
-    public async void Function()
-    {   PlayerPrefs.SetInt( "MyFF",FFF);
-        print("1");
-       await Task.Delay(60000);
-       FFF=10;
-       PlayerPrefs.SetInt( "MyFF",FFF);
-        print("2");
     }
     private void OnTriggerEnter(Collider other)
     {

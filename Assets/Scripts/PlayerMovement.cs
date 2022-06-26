@@ -69,6 +69,8 @@ public class PlayerMovement : MonoBehaviour
         }//if end
         else
             MovePos = Vector3.zero;
+        if (IsWalking == true)
+            IsWalking = Inputs.TouchDown;
     }//FixedUpdate() end
     private void OnTriggerEnter(Collider other)
     {

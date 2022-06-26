@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Threading.Tasks;
 public class EnemyController : MonoBehaviour
 {
     // public enum EnemyType
@@ -16,25 +17,27 @@ public class EnemyController : MonoBehaviour
     public Rigidbody rb;
     public Animator animator;
     public static Transform target;
-    bool isCollided = false, isRunning = true , isFirstCollision = true;
+    bool isCollided = false, isRunning = true, isFirstCollision = true;
     private void Start()
     {
         target = PlayerMovement.instance.transform;
+        Function();
     }
     private void Update()
     {
-
+        
+        
         if (UIManager.instance.gameState != GameState.GamePlay)
             return;
 
         if (Vector3.Distance(PlayerMovement.instance.transform.position, transform.position) < chaseRange)
         {
             if (target != null & isRunning == true)
-            { //Debug.Log ("running");
+            {   //Debug.Log ("running");
                 GetComponent<Animator>().SetBool("isRunning", true);
                 transform.position = Vector3.MoveTowards(transform.position, target.position, speed * Time.deltaTime);
                 transform.LookAt(target.position);
-                //   rb.MovePosition(target.position);
+                //rb.MovePosition(target.position);
             }
 
             if (transform.position.z < target.position.z - 200)
@@ -60,14 +63,29 @@ public class EnemyController : MonoBehaviour
             Destroy(gameObject, 3);
         }
     }
+    int FFF = 5;
+
+    public async void Function()
+    {   PlayerPrefs.SetInt( "MyFF",FFF);
+        print("1");
+       await Task.Delay(60000);
+       FFF=10;
+       PlayerPrefs.SetInt( "MyFF",FFF);
+        print("2");
+    }
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.transform.tag == "Player")
+        {
+         UIManager.instance.gameState = GameState.LevelFail;   
+        }
+        else if (other.transform.tag == "Bubble")
         {
             if (isFirstCollision == true)
             {
                 isFirstCollision = false;
-                BubbleController.instance.SizeDecrement(dicreamentSize);
+                other.GetComponent<BubbleController>().SizeDecrement(dicreamentSize);
                 isRunning = false;
                 isCollided = true;
                 // target = null;

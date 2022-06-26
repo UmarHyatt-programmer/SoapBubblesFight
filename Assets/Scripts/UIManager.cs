@@ -26,13 +26,10 @@ public class UIManager : MonoBehaviour
             Tut.SetActive(false);
         }
     }
-
 }
-
-
-public enum GameState{ 
-
-   Mainmenu,
+public enum GameState
+{ 
+       Mainmenu,
    GamePlay,
    LevelComplete,
    LevelFail

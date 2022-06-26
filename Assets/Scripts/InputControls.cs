@@ -8,6 +8,12 @@ public class InputControls : MonoBehaviour
     
     public bool TouchDown   => FingerDown;
     public float Horizontal => MoveDeltaX;
+    public static InputControls instance;
+
+    private void Awake() {
+        if (instance == null)
+        instance = this;
+    }
 
     private void Start() => Input.multiTouchEnabled = false;
     

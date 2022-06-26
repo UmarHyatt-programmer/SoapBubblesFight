@@ -11,6 +11,7 @@ public class PlayerMovement : MonoBehaviour
     }
     [SerializeField] bool IsWalking = false;
     [SerializeField] float ForwardSpeed = 1.0f;
+    public float strafeSpeedClamp ;
     [SerializeField] float StrafeSpeed = 1.0f;
     [SerializeField] float ClampX = 3.0f;
 
@@ -22,6 +23,9 @@ public class PlayerMovement : MonoBehaviour
     private float InputX = 0.0f;
     private Vector3 MovePos = Vector3.zero;
     Quaternion rot;
+    public BubbleController handBubble;
+    //public GameObject prefab;
+    // bool isHold= true;
 
     private void Start() => Initialize();
 
@@ -42,8 +46,11 @@ public class PlayerMovement : MonoBehaviour
         if (IsWalking == false)
             IsWalking = Inputs.TouchDown;
         // Anim.SetBool("Walk", IsWalking);
-        InputX = Inputs.Horizontal;
-    }//Update() end
+        
+        InputX = Inputs.Horizontal * StrafeSpeed;
+        InputX = Mathf.Clamp(InputX,-strafeSpeedClamp,strafeSpeedClamp);
+        print(InputX);
+    }
 
     private void FixedUpdate()
     {
@@ -53,7 +60,7 @@ public class PlayerMovement : MonoBehaviour
         if (IsWalking)
         {
             PlayerAnim.SetBool("isRunning", true);
-            MovePos = Self.position + (new Vector3(InputX * StrafeSpeed, 0, ForwardSpeed * Time.deltaTime) * Time.deltaTime);
+            MovePos = Self.position + (new Vector3(InputX , 0, ForwardSpeed * Time.deltaTime) * Time.deltaTime);
             MovePos.x = Mathf.Clamp(MovePos.x, -ClampX, ClampX);
             rot = Quaternion.AngleAxis(InputX * StrafeSpeed, Vector3.up);
             RB.MovePosition(MovePos);

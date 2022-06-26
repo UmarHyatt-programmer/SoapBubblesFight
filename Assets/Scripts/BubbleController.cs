@@ -4,64 +4,69 @@ using UnityEngine;
 
 public class BubbleController : MonoBehaviour
 {
+    public delegate void Behaviour();
+    public Behaviour currentBehaviour;
     public float changeSize;
     public float minBubbleSize;
     Transform bubble;
     Vector3 playerPos;
-    public float bubbleOffset;
+    public float bubbleOffsetY ,bubbleOffsetZ;
     public bool isHold = true;
 
-    // Update is called once per frame
+    public float farwardSpeed;
     public float maxSize;
-    public static BubbleController instance;
-    private void Awake()
+    public float firedBubbleRange;
+    public GameObject prefab;
+    private void Start()
     {
-        if(instance == null){instance=this;}
-
-
-        bubble = transform;
+        currentBehaviour = FollowPlayer;
+        currentBehaviour += IncreaseBubbleSize;
     }
+    bool isTouched;
+    bool isShoot;
     void Update()
     {
-        if (UIManager.instance.gameState != GameState.GamePlay)
-            return;
-        if (isHold == true)
-        {
-            FollowPlayer();
-            IncreaseBubbleSize();
-        }
-        //changing player bubble size
+        currentBehaviour?.Invoke();
     }
     public void IncreaseBubbleSize()
     {
-        if (bubble.localScale.x < maxSize)
+        if (Input.GetMouseButton(0) && transform.localScale.x < maxSize)
         {
-            bubble.localScale += Vector3.one * changeSize * Time.deltaTime;
+            transform.localScale += Vector3.one * changeSize * Time.deltaTime;
         }
     }
     public void FollowPlayer()
     {
         playerPos = PlayerMovement.instance.transform.position;
-        transform.position = new Vector3(playerPos.x, (playerPos.y + transform.localScale.y / 2) + bubbleOffset, (playerPos.z + transform.localScale.z / 2) + bubbleOffset);
+        transform.position = new Vector3(playerPos.x, (playerPos.y + transform.localScale.y / 2) + bubbleOffsetY, (playerPos.z + transform.localScale.z / 2) + bubbleOffsetZ);
     }
 
-        public void SizeDecrement(float decrement)
+    public void SizeDecrement(float decrement)
     {
-        if (UIManager.instance.gameState != GameState.GamePlay)
-            return;
-
-        if (transform.localScale.z > minBubbleSize)
+        if (UIManager.instance.gameState == GameState.GamePlay)
         {
-            transform.localScale -= new Vector3(decrement, decrement, decrement);
+            if (transform.localScale.z > minBubbleSize)
+            {
+                transform.localScale -= new Vector3(decrement, decrement, decrement);
+            }
+            else
+            {
+                UIManager.instance.gameOverPanel.SetActive(true);
+                Debug.Log("You lose");
+                UIManager.instance.gameState = GameState.LevelFail;
+                //Time.timeScale=0;
+            }
         }
-        else
-        {
-            UIManager.instance.gameOverPanel.SetActive(true);
-            Debug.Log("You lose");
-            UIManager.instance.gameState = GameState.LevelFail;
-            //Time.timeScale=0;
-        }
-
     }
+
+    public void MoveFarward()
+    {
+        transform.position += new Vector3(0, 0, farwardSpeed * Time.deltaTime);
+    }
+    private void OnBecameInvisible()
+    {
+        Destroy(gameObject);
+    }
+    //public int myInt(){return ClampX;}
 }
 

@@ -77,6 +77,16 @@ public class PlayerMovement : MonoBehaviour
         }//if end
         else
             MovePos = Vector3.zero;
+        if (IsWalking == true)
+        {
+            IsWalking = Inputs.TouchDown;
+            PlayerAnim.SetBool("isRunning", true);
+        }
+        else
+        {
+            PlayerAnim.SetBool("isRunning", false);
+        }
+           
     }//FixedUpdate() end
     private void OnTriggerEnter(Collider other)
     {

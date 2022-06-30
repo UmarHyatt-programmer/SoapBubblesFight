@@ -79,6 +79,11 @@ public class EnemyController : MonoBehaviour
                 isRunning = false;
                 isCollided = true;
                 // target = null;
+                if(other.gameObject== PlayerMovement.instance.handBubble)
+                {
+                    return;
+                }
+                Destroy(other.gameObject);
             }
         }
     }

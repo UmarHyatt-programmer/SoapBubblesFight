@@ -1,5 +1,5 @@
 {
-    "m_SGVersion": 3,
+    "m_SGVersion": 2,
     "m_Type": "UnityEditor.ShaderGraph.GraphData",
     "m_ObjectId": "018ebeb65cfa4b68805795d97adac918",
     "m_Properties": [
@@ -20,12 +20,6 @@
         }
     ],
     "m_Keywords": [],
-    "m_Dropdowns": [],
-    "m_CategoryData": [
-        {
-            "m_Id": "2b590b77617d499d9f9a55f3ad16b785"
-        }
-    ],
     "m_Nodes": [
         {
             "m_Id": "e6a2a00501884d44ae331a7a32d78017"
@@ -1035,11 +1029,10 @@
         "serializedMesh": {
             "m_SerializedMesh": "{\"mesh\":{\"instanceID\":0}}",
             "m_Guid": ""
-        },
-        "preventRotation": false
+        }
     },
     "m_Path": "Shader Graphs",
-    "m_GraphPrecision": 1,
+    "m_ConcretePrecision": 0,
     "m_PreviewMode": 2,
     "m_OutputNode": {
         "m_Id": ""
@@ -2734,13 +2727,9 @@
         "m_GuidSerialized": "e1eabc73-ce37-4642-b8c4-f0e2236d4438"
     },
     "m_Name": "noice subtraction",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "noice subtraction",
     "m_DefaultReferenceName": "_noice_subtraction",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -2824,8 +2813,7 @@
     "m_CustomColors": {
         "m_SerializableColors": []
     },
-    "m_Space": 2,
-    "m_PositionSource": 0
+    "m_Space": 2
 }
 
 {
@@ -5442,13 +5430,9 @@
         "m_GuidSerialized": "8e38c976-eb9b-48ff-8432-4bda60579baf"
     },
     "m_Name": "Add Alpha",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "Add Alpha",
     "m_DefaultReferenceName": "_Add_Alpha",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -5617,13 +5601,9 @@
         "m_GuidSerialized": "a6e425e2-80ef-40e8-81cd-f1bc442df4bf"
     },
     "m_Name": "DivideColor",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "DivideColor",
     "m_DefaultReferenceName": "_DivideColor",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -5730,40 +5710,16 @@
     "m_Value": 0.0,
     "m_SerializableColorKeys": [
         {
-            "x": 0.0,
+            "x": 1.0,
             "y": 1.0,
-            "z": 0.012671470642089844,
+            "z": 1.0,
             "w": 0.0
         },
         {
-            "x": 0.0,
-            "y": 0.8650836944580078,
-            "z": 1.0,
-            "w": 0.10293736308813095
-        },
-        {
-            "x": 0.0,
-            "y": 1.0,
-            "z": 0.8936910629272461,
-            "w": 0.3294117748737335
-        },
-        {
-            "x": 0.0008306503295898438,
-            "y": 0.0,
-            "z": 1.0,
-            "w": 0.43823909759521487
-        },
-        {
-            "x": 0.7488565444946289,
-            "y": 0.0,
-            "z": 1.0,
-            "w": 0.5000076293945313
-        },
-        {
             "x": 1.0,
-            "y": 0.7908276915550232,
-            "z": 0.0,
-            "w": 0.9441214799880981
+            "y": 1.0,
+            "z": 1.0,
+            "w": 1.0
         }
     ],
     "m_SerializableAlphaKeys": [
@@ -5865,13 +5821,9 @@
         "m_GuidSerialized": "b73cbd81-d6a6-4b13-b259-e8dca05c9e1d"
     },
     "m_Name": "FreneralPower",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "FreneralPower",
     "m_DefaultReferenceName": "_FreneralPower",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,
@@ -6323,13 +6275,9 @@
         "m_GuidSerialized": "387f77c9-0724-4966-988f-e7e023f78db4"
     },
     "m_Name": "BlendSharpness",
-    "m_DefaultRefNameVersion": 1,
-    "m_RefNameGeneratedByDisplayName": "BlendSharpness",
     "m_DefaultReferenceName": "_BlendSharpness",
     "m_OverrideReferenceName": "",
     "m_GeneratePropertyBlock": true,
-    "m_UseCustomSlotLabel": false,
-    "m_CustomSlotLabel": "",
     "m_Precision": 0,
     "overrideHLSLDeclaration": false,
     "hlslDeclarationOverride": 0,

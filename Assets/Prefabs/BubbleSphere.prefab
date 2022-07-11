@@ -109,7 +109,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   changeSize: 0.15
-  minBubbleSize: 0.3
+  minBubbleSize: 0.2
   bubbleOffsetY: 0.2
   bubbleOffsetZ: 0.7
   isHold: 1

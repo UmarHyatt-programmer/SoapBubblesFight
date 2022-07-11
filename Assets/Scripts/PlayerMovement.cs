@@ -9,7 +9,7 @@ public class PlayerMovement : MonoBehaviour
             instance = this;
         }
     }
-    [SerializeField] bool IsWalking = false;
+    [SerializeField] public bool IsWalking = false;
     [SerializeField] float ForwardSpeed = 1.0f;
     public float strafeSpeedClamp ;
     [SerializeField] float StrafeSpeed = 1.0f;
@@ -103,7 +103,7 @@ public class PlayerMovement : MonoBehaviour
         currentRotation = Mathf.Atan(InputX / 1) * Mathf.Rad2Deg;
         currentRotation = Mathf.Clamp(currentRotation, -30, 30);
         var rotation = Quaternion.Euler(Vector3.up * currentRotation);
-        //        Debug.LogError(rotation);
+        //Debug.LogError(rotation);
         transform.rotation = Quaternion.Slerp(transform.rotation, rotation, Time.deltaTime * 2.5f);
     }
 

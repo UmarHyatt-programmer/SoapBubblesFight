@@ -27,6 +27,7 @@ public class BubbleController : MonoBehaviour
     void Update()
     {
         currentBehaviour?.Invoke();
+
     }
     public void IncreaseBubbleSize()
     {
@@ -62,6 +63,7 @@ public class BubbleController : MonoBehaviour
     public void MoveFarward()
     {
         transform.position += new Vector3(0, 0, farwardSpeed * Time.deltaTime);
+
     }
     private void OnBecameInvisible()
     {

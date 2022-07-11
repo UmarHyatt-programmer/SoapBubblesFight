@@ -20,7 +20,8 @@ public class UIManager : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0) && gameState == GameState.Mainmenu) {
+        if (Input.GetMouseButtonDown(0) && gameState == GameState.Mainmenu) 
+        {
 
             gameState = GameState.GamePlay;
             Tut.SetActive(false);
@@ -29,7 +30,7 @@ public class UIManager : MonoBehaviour
 }
 public enum GameState
 { 
-       Mainmenu,
+   Mainmenu,
    GamePlay,
    LevelComplete,
    LevelFail

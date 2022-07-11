@@ -26,6 +26,7 @@ public class EnemyController : MonoBehaviour
     private void Update()
     {
         
+        
         if (UIManager.instance.gameState != GameState.GamePlay)
             return;
 
@@ -65,13 +66,11 @@ public class EnemyController : MonoBehaviour
     private void OnTriggerEnter(Collider other)
     {
 
-       /* if (other.transform.tag == "Player")
+        if (other.transform.tag == "Player")
         {
-            UIManager.instance.gameState = GameState.LevelFail;
-            UIManager.instance.gameOverPanel.SetActive(true);
-
-        }*/
-         if (other.transform.tag == "Bubble")
+         UIManager.instance.gameState = GameState.LevelFail;   
+        }
+        else if (other.transform.tag == "Bubble")
         {
             if (isFirstCollision == true)
             {
@@ -80,6 +79,10 @@ public class EnemyController : MonoBehaviour
                 isRunning = false;
                 isCollided = true;
                 // target = null;
+                if(other.gameObject== PlayerMovement.instance.handBubble)
+                {
+                    return;
+                }
                 Destroy(other.gameObject);
             }
         }

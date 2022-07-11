@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.IO;
 
 public class BubbleController : MonoBehaviour
 {
@@ -21,6 +22,10 @@ public class BubbleController : MonoBehaviour
     {
         currentBehaviour = FollowPlayer;
         currentBehaviour += IncreaseBubbleSize;
+    }
+    public void CreateFile()
+    {
+        
     }
     bool isTouched;
     bool isShoot;

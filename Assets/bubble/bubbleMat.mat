@@ -118,7 +118,7 @@ Material:
     - _GlossinessSource: 0
     - _GlossyReflections: 1
     - _HueVariationKwToggle: 0
-    - _Inside: 0.15
+    - _Inside: 0.927
     - _Metallic: 0
     - _Mode: 3
     - _NormalMapKwToggle: 0
@@ -134,7 +134,7 @@ Material:
     - _RampThresholdPoint: 0.5
     - _RampThresholdSpot: 0.5
     - _ReceiveShadows: 1
-    - _Rim: 1.07
+    - _Rim: 0.514
     - _Shadow_HSV_H: 0
     - _Shadow_HSV_S: 0
     - _Shadow_HSV_V: 0
@@ -144,13 +144,13 @@ Material:
     - _SmoothnessTextureChannel: 0
     - _SpecSource: 0
     - _SpecularHighlights: 1
-    - _Speed: 0.5
+    - _Speed: 1.67
     - _SrcBlend: 1
-    - _Strength: 1.5
+    - _Strength: 0.69
     - _SubsurfaceIndirect: 0.25
     - _SubsurfaceKwToggle: 0
     - _Surface: 0
-    - _Tile: 2.267857
+    - _Tile: 2.19
     - _TwoSided: 2
     - _UVSec: 0
     - _WindQuality: 0
@@ -160,7 +160,7 @@ Material:
     - __dummy__: 0
     m_Colors:
     - _BaseColor: {r: 1, g: 1, b: 1, a: 1}
-    - _Color: {r: 0, g: 1, b: 0.49560642, a: 0.6392157}
+    - _Color: {r: 1, g: 0, b: 0.8823528, a: 0.6666667}
     - _EmissionColor: {r: 0, g: 0.76046944, b: 1, a: 1}
     - _HColor: {r: 0.785, g: 0.785, b: 0.785, a: 1}
     - _HueVariationColor: {r: 1, g: 0.5, b: 0, a: 0.1}

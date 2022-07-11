@@ -94,6 +94,8 @@ public class PlayerMovement : MonoBehaviour
         {
             UIManager.instance.gameWinPanel.SetActive(true);
             UIManager.instance.gameState = GameState.LevelComplete;
+            IsWalking = false;
+            PlayerAnim.SetBool("isRunning", false);
 
         }
     }

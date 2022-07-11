@@ -58,6 +58,7 @@ public class EnemyController : MonoBehaviour
             rb.useGravity = false;
             transform.position += new Vector3(0, upwardSpeed * Time.deltaTime, 0);
             GetComponent<Animator>().SetBool("isFalling", true);
+            GetComponent<Animator>().SetBool("isRunning", true);
 
             Destroy(gameObject, 3);
         }
